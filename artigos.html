@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos - Guilherme Berson</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">🏠 Início</a>
+        <a href="curriculum.html">📄 Currículo</a>
+        <a href="artigos.html">✍️ Artigos</a>
+        <div class="switch" onclick="toggleDarkMode()">🌙 Dark Mode</div>
+    </nav>
+
+    <main class="artigos-main">
+        <aside class="menu-lateral">
+            <h3>Assuntos</h3>
+            <ul>
+                <li><a href="#ia">🤖 IA</a></li>
+                <li><a href="#android">📱 Android</a></li>
+                <li><a href="#ios">🍏 iOS</a></li>
+                <li><a href="#front">💻 Front-end</a></li>
+            </ul>
+        </aside>
+
+        <section class="conteudo-artigos">
+            <article id="ia">
+                <h2>Inteligência Artificial</h2>
+                <p>Discussões sobre o impacto da IA em desenvolvimento mobile, integrações e APIs.</p>
+            </article>
+
+            <article id="android">
+                <h2>Android</h2>
+                <p>Dicas, tutoriais e melhores práticas para Kotlin, Jetpack Compose e arquitetura.</p>
+            </article>
+
+            <article id="ios">
+                <h2>iOS</h2>
+                <p>Desenvolvimento para iOS com Swift e integração entre plataformas.</p>
+            </article>
+
+            <article id="front">
+                <h2>Front-end</h2>
+                <p>Boas práticas e tendências em HTML, CSS, JavaScript e frameworks modernos.</p>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
