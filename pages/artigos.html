@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artigos - Guilherme Berson</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html">🏠 Início</a>
-        <a href="curriculum.html">📄 Currículo</a>
-        <a href="artigos.html">✍️ Artigos</a>
-        <div class="switch" onclick="toggleDarkMode()">🌙 Dark Mode</div>
+       <nav>
+        <a href="../index.html">🏠 Início</a>
+        <a href="sobremim.html">📄 Sobre mim</a>
+        <a href="artigos.html" class="active">✍️ Artigos</a>
+        <div class="switch-container">
+    <label for="darkModeToggle" class="switch-label">🌙 Dark Mode</label>
+    <label class="switch">
+        <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+        <span class="slider"></span>
+    </label>
+</div>
     </nav>
+    
 
     <main class="artigos-main">
         <aside class="menu-lateral">
@@ -48,6 +55,6 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="../scripts/script.js"></script>
 </body>
 </html>
