@@ -6,6 +6,24 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
+.hero-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo-profissional {
+  width: 260px;
+  height: auto;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.logo-profissional:hover {
+  transform: scale(1.05);
+}
+
 .dark-mode {
     background: #121212;
     color: #ddd;
