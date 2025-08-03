@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guilherme Berson</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="shortcut icon" href="imgs/logoNoBG.ico">
-</head>
-<body>
-    <nav>
-        <a href="index.html" class="active">🏠 Início</a>
-        <a href="pages/sobremim.html">📄 Sobre mim</a>
-        <a href="pages/artigos.html">✍️ Artigos</a>
 
-        <div class="switch-container">
-    <label for="darkModeToggle" class="switch-label">🌙 Dark Mode</label>
-    <label class="switch">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guilherme Berson</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="shortcut icon" href="imgs/logoNoBG.ico">
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="active">🏠 Início</a>
+    <a href="pages/sobremim.html">📄 Sobre mim</a>
+    <a href="pages/artigos.html">✍️ Artigos</a>
+
+    <div class="switch-container">
+      <label for="darkModeToggle" class="switch-label">🌙 Dark Mode</label>
+      <label class="switch">
         <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
         <span class="slider"></span>
-    </label>
-</div>
-    </nav>
-
-    <main>
-  <section class="section hero">
-    <div class="hero-header">
-      <img src="imgs/logo.png" alt="Logo Berson" class="logo-profissional">
-      <div>
-        <h1>👋 Olá, eu sou Guilherme Taveira Berson</h1>
-        <p>Engenheiro Mobile focado em soluções inteligentes e experiências incríveis.</p>
-        <a href="pages/sobremim.html" class="btn">Saiba mais sobre mim</a>
-      </div>
+      </label>
     </div>
-  </section>
-</main>
+  </nav>
+
+  <main>
+    <section class="section hero">
+      <div class="hero-header">
+        <img src="imgs/logo.png" alt="Logo Berson" class="logo-profissional">
+        <div class="hero-text">
+          <h1><span class="hello">👋 Olá, eu sou</span> <span class="name">Guilherme Taveira Berson</span></h1>
+          <p class="typing">
+            Engenheiro <span class="highlight">Mobile</span> focado em <span class="highlight">soluções
+              inteligentes</span> e <span class="highlight">experiências incríveis</span>.
+          </p>
+          </p> <a href="pages/sobremim.html" class="btn">Saiba mais sobre mim</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
 
-    <script src="scripts/script.js"></script>
+  <script src="scripts/script.js"></script>
 </body>
+
 </html>
