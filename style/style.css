@@ -294,6 +294,8 @@ main {
   padding: 20px;
 }
 
+
+
 /* ===== TIMELINE ===== */
 .timeline-centered {
   position: relative;
@@ -362,6 +364,30 @@ main {
   color: #6c63ff;
 }
 
+/* ===== RESPONSIVIDADE DA TIMELINE ===== */
+@media (max-width: 768px) {
+  .timeline-centered::before {
+    left: 20px;
+  }
+
+  .timeline-event {
+    width: 100%;
+    padding-left: 50px; 
+    padding-right: 15px;
+    text-align: left !important;
+  }
+
+  .timeline-event.left, .timeline-event.right {
+    left: 0;
+  }
+
+  .timeline-event.left .content::after, 
+  .timeline-event.right .content::after {
+    display: none;
+  }
+}
+
+
 /* ===== DARK MODE ===== */
 .dark-mode {
   background: #121212;
@@ -429,18 +455,11 @@ main {
 }
 
 /* ===== Animação de digitação e Destaques (apenas CSS) ===== */
+/* Estilo base para o texto, que se ajusta em telas pequenas */
 .typing {
   font-family: monospace;
   font-size: 1.1rem;
   color: #444;
-  /* Estas propriedades são essenciais para a animação CSS */
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  border-right: 2px solid #6c63ff;
-  animation: 
-    typing 4s steps(500, end) forwards,
-    blink-caret 0.75s step-end infinite;
 }
 
 .hero-text .typing .highlight {
@@ -456,12 +475,60 @@ main {
   color: #5d9cec; 
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+
+/* Aplica a animação de digitação apenas em telas grandes */
+@media (min-width: 768px) {
+    .typing {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      border-right: 2px solid #6c63ff;
+      animation: 
+        typing 4s steps(100, end) forwards,
+        blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #6c63ff; }
+    }
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #6c63ff; }
+/* ===== LAYOUT GERAL (para telas menores) ===== */
+@media (max-width: 768px) {
+  /* Alinha os itens do perfil em coluna */
+  .perfil-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Ajuste no hero-text para que o layout se adapte bem */
+  .hero-text {
+    padding: 0 15px; /* Adiciona um padding para o texto não encostar nas bordas */
+  }
+
+  /* Faz com que os cards de projeto quebrem a linha */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Centraliza as seções de tecnologias */
+  .habilidades-primarias, .habilidades-secundarias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* Ajusta o tamanho da imagem para dispositivos móveis */
+  .habilidades-secundarias img, .habilidades-primarias img {
+    width: 40px;
+    height: 40px;
+  }
 }
