@@ -157,25 +157,36 @@ main {
   animation: fadeInName 2s ease forwards;
 }
 
-/* Animação de digitação */
-.typed-text {
+/* ===== Animação de digitação e Destaques (corrigidos) ===== */
+.typing {
+  font-family: monospace;
   font-size: 1.1rem;
   color: #444;
   border-right: 2px solid #6c63ff;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing 4s steps(60, end) forwards, blink-caret 0.75s step-end infinite;
+  display: inline-block;
+  animation: blink-caret 0.75s step-end infinite;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+.hero-text .typing .highlight {
+  color: #6c63ff; 
+  font-weight: bold; 
+}
+
+.dark-mode .typing {
+  color: #ddd;
+}
+
+.dark-mode .hero-text .typing .highlight {
+  color: #5d9cec; 
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #6c63ff; }
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #6c63ff;
+  }
 }
 
 .btn {
@@ -417,49 +428,40 @@ main {
   }
 }
 
-/* Animação de digitação */
+/* ===== Animação de digitação e Destaques (apenas CSS) ===== */
 .typing {
   font-family: monospace;
   font-size: 1.1rem;
   color: #444;
+  /* Estas propriedades são essenciais para a animação CSS */
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #6c63ff;
   width: 0;
-  display: inline-block; /* Garante que a largura se ajuste ao conteúdo */
-  animation: typing 4s steps(90, end) forwards, blink-caret 0.75s step-end infinite;
+  border-right: 2px solid #6c63ff;
+  animation: 
+    typing 4s steps(500, end) forwards,
+    blink-caret 0.75s step-end infinite;
 }
 
-/* Garante que o destaque tenha cor no modo escuro */
+.hero-text .typing .highlight {
+  color: #6c63ff; 
+  font-weight: bold; 
+}
+
 .dark-mode .typing {
   color: #ddd;
 }
 
-.typing .highlight {
-  color: #6c63ff; /* Cor do destaque */
-  font-weight: bold; /* Deixa em negrito */
+.dark-mode .hero-text .typing .highlight {
+  color: #5d9cec; 
 }
 
-.dark-mode .typing .highlight {
-  color: #5d9cec; /* Cor do destaque no modo escuro */
-}
-
-/* Animação que aumenta a largura do texto, como se estivesse sendo digitado */
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
-/* Animação para o cursor piscando */
 @keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #6c63ff;
-  }
+  from, to { border-color: transparent; }
+  50% { border-color: #6c63ff; }
 }
