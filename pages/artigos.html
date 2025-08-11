@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artigos - Guilherme Berson</title>
-    <link rel="stylesheet" href="../style/style.css">
-        <link rel="shortcut icon" href="../imgs/logoNoBG.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artigos - Guilherme Berson</title>
+  <link rel="stylesheet" href="../style/styleArticles.css" />
+  <link rel="shortcut icon" href="../imgs/logoNoBG.ico" />
 </head>
 <body>
-       <nav>
-        <a href="../index.html">🏠 Início</a>
-        <a href="sobremim.html">📄 Sobre mim</a>
-        <a href="artigos.html" class="active">✍️ Artigos</a>
-        <div class="switch-container">
-    <label for="darkModeToggle" class="switch-label">🌙 Dark Mode</label>
-    <label class="switch">
-        <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
-        <span class="slider"></span>
-    </label>
-</div>
-    </nav>
     
+      <nav class="navbar">
+    <div class="nav-logo">
+      <img src="../imgs/logo.png" alt="Logo Berson">
+      <span>Berson.dev</span>
+    </div>
+    <div class="nav-links">
+      <a href="../index.html" >🏠 Início</a>
+      <a href="sobremim.html" >📄 Sobre mim</a>
+      <a href="artigos.html" class="active">✍️ Artigos</a>
+    </div>
+  </nav>
 
-    <main class="artigos-main">
-        <aside class="menu-lateral">
-            <h3>Assuntos</h3>
-            <ul>
-                <li><a href="#ia">🤖 IA</a></li>
-                <li><a href="#android">📱 Android</a></li>
-                <li><a href="#ios">🍏 iOS</a></li>
-                <li><a href="#front">💻 Front-end</a></li>
-            </ul>
-        </aside>
+  <main>
+    <section class="section">
+      <h1>Artigos</h1>
 
-        <section class="conteudo-artigos">
-            <article id="ia">
-                <h2>Inteligência Artificial</h2>
-                <p>Discussões sobre o impacto da IA em desenvolvimento mobile, integrações e APIs.</p>
-            </article>
+      <nav class="submenu">
+        <a href="#ia" class="nav-link">🤖 IA</a>
+        <a href="#android" class="nav-link">📱 Android</a>
+        <a href="#ios" class="nav-link">🍏 iOS</a>
+        <a href="#front" class="nav-link">💻 Front-end</a>
+      </nav>
 
-            <article id="android">
-                <h2>Android</h2>
-                <p>Dicas, tutoriais e melhores práticas para Kotlin, Jetpack Compose e arquitetura.</p>
-            </article>
+      <article id="ia" class="article-section">
+        <h2>Inteligência Artificial</h2>
+        <p>Discussões sobre o impacto da IA em desenvolvimento mobile, integrações e APIs.</p>
+      </article>
 
-            <article id="ios">
-                <h2>iOS</h2>
-                <p>Desenvolvimento para iOS com Swift e integração entre plataformas.</p>
-            </article>
+      <article id="android" class="article-section">
+        <h2>Android</h2>
+        <p>Dicas, tutoriais e melhores práticas para Kotlin, Jetpack Compose e arquitetura.</p>
+      </article>
 
-            <article id="front">
-                <h2>Front-end</h2>
-                <p>Boas práticas e tendências em HTML, CSS, JavaScript e frameworks modernos.</p>
-            </article>
-        </section>
-    </main>
+      <article id="ios" class="article-section">
+        <h2>iOS</h2>
+        <p>Desenvolvimento para iOS com Swift e integração entre plataformas.</p>
+      </article>
 
-    <script src="../scripts/script.js"></script>
+      <article id="front" class="article-section">
+        <h2>Front-end</h2>
+        <p>Boas práticas e tendências em HTML, CSS, JavaScript e frameworks modernos.</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="../scripts/script.js"></script>
 </body>
 </html>
