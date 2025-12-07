@@ -1,13 +1,16 @@
 /* ===== IMPORTS & VARIABLES ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-:root {
+/* Dark Theme (Default) */
+:root,
+[data-theme="dark"] {
   --primary: #00d9ff;
   --primary-dark: #00a8c7;
   --secondary: #ffd700;
   --bg-dark: #0a0f1a;
   --bg-card: #0f1623;
   --bg-card-hover: #141d2c;
+  --bg-navbar: rgba(10, 15, 26, 0.8);
   --text-primary: #ffffff;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
@@ -26,6 +29,22 @@
   --color-android: #3ddc84;
   --color-ios: #64748b;
   --color-frontend: #f59e0b;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --primary: #0891b2;
+  --primary-dark: #0e7490;
+  --secondary: #d97706;
+  --bg-dark: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-navbar: rgba(255, 255, 255, 0.9);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 40px rgba(8, 145, 178, 0.1);
 }
 
 /* ===== RESET ===== */
@@ -60,13 +79,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 4rem;
-  background: rgba(10, 15, 26, 0.8);
+  background: var(--bg-navbar);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
 }
 
 .nav-logo {
@@ -95,6 +115,7 @@ body {
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -110,12 +131,36 @@ body {
 
 .nav-links a:hover {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--border-color);
 }
 
 .nav-links a.active {
   color: var(--primary);
   background: rgba(0, 217, 255, 0.1);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-left: 0.5rem;
+}
+
+.theme-toggle:hover {
+  background: var(--primary);
+  color: var(--bg-dark);
+  border-color: var(--primary);
+  transform: rotate(15deg);
 }
 
 /* ===== MAIN ===== */
