@@ -1,59 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Artigos - Guilherme Berson</title>
   <link rel="stylesheet" href="../style/styleArticles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="shortcut icon" href="../imgs/logoNoBG.ico" />
 </head>
+
 <body>
-    
-      <nav class="navbar">
+  <!-- Navbar -->
+  <nav class="navbar">
     <div class="nav-logo">
       <img src="../imgs/logo.png" alt="Logo Berson">
-      <span>Berson.dev</span>
+      <span>berson.dev</span>
     </div>
     <div class="nav-links">
-      <a href="../index.html" >🏠 Início</a>
-      <a href="sobremim.html" >📄 Sobre mim</a>
+      <a href="../index.html">🏠 Início</a>
+      <a href="sobremim.html">📄 Sobre mim</a>
       <a href="artigos.html" class="active">✍️ Artigos</a>
     </div>
   </nav>
 
   <main>
-    <section class="section">
-      <h1>Artigos</h1>
+    <!-- Empty State / Coming Soon -->
+    <section class="coming-soon-section">
+      <div class="coming-soon-content">
+        <div class="coming-soon-icon">
+          <i class="fas fa-pencil-alt"></i>
+        </div>
+        <span class="coming-soon-badge">Em breve</span>
+        <h1>Artigos & Tutoriais</h1>
+        <p class="coming-soon-text">
+          Estou preparando conteúdos sobre desenvolvimento mobile,
+          <span class="highlight">Android</span>, <span class="highlight">iOS</span>,
+          <span class="highlight">Inteligência Artificial</span> e muito mais.
+        </p>
 
-      <nav class="submenu">
-        <a href="#ia" class="nav-link">🤖 IA</a>
-        <a href="#android" class="nav-link">📱 Android</a>
-        <a href="#ios" class="nav-link">🍏 iOS</a>
-        <a href="#front" class="nav-link">💻 Front-end</a>
-      </nav>
+        <!-- Topics Preview -->
+        <div class="topics-preview">
+          <div class="topic-card">
+            <div class="topic-icon android">
+              <i class="fab fa-android"></i>
+            </div>
+            <h3>Android</h3>
+            <p>Kotlin, Jetpack Compose, Clean Architecture</p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon ios">
+              <i class="fab fa-apple"></i>
+            </div>
+            <h3>iOS</h3>
+            <p>Swift, SwiftUI, UIKit</p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon ia">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>IA</h3>
+            <p>Machine Learning, APIs, Integrações</p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon frontend">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Front-end</h3>
+            <p>HTML, CSS, JavaScript, Angular</p>
+          </div>
+        </div>
 
-      <article id="ia" class="article-section">
-        <h2>Inteligência Artificial</h2>
-        <p>Discussões sobre o impacto da IA em desenvolvimento mobile, integrações e APIs.</p>
-      </article>
-
-      <article id="android" class="article-section">
-        <h2>Android</h2>
-        <p>Dicas, tutoriais e melhores práticas para Kotlin, Jetpack Compose e arquitetura.</p>
-      </article>
-
-      <article id="ios" class="article-section">
-        <h2>iOS</h2>
-        <p>Desenvolvimento para iOS com Swift e integração entre plataformas.</p>
-      </article>
-
-      <article id="front" class="article-section">
-        <h2>Front-end</h2>
-        <p>Boas práticas e tendências em HTML, CSS, JavaScript e frameworks modernos.</p>
-      </article>
+        <!-- CTA -->
+        <div class="coming-soon-cta">
+          <p>Enquanto isso, conheça mais sobre meu trabalho:</p>
+          <div class="cta-buttons">
+            <a href="sobremim.html" class="btn-primary">
+              <i class="fas fa-user"></i>
+              <span>Sobre mim</span>
+            </a>
+            <a href="https://github.com/bersoncrios" target="_blank" class="btn-secondary">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Guilherme Berson. Todos os direitos reservados.</p>
+  </footer>
+
   <script src="../scripts/script.js"></script>
 </body>
+
 </html>

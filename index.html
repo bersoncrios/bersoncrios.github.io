@@ -6,15 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guilherme Berson | Engenheiro Mobile</title>
   <link rel="stylesheet" href="style/styleHome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="imgs/logoNoBG.ico" type="image/x-icon">
 </head>
 
 <body>
+  <!-- Animated Background -->
+  <div class="bg-animation">
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+  </div>
+
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-logo">
       <img src="imgs/logo.png" alt="Logo Berson">
-      <span>Berson.dev</span>
+      <span>berson.dev</span>
     </div>
     <div class="nav-links">
       <a href="index.html" class="active">🏠 Início</a>
@@ -26,23 +38,152 @@
   <!-- HERO SECTION -->
   <main>
     <section class="hero">
-      <div class="hero-content">
+      <div class="hero-container">
+        <!-- Left Content -->
         <div class="hero-text">
-          <h1>👋 Olá, eu sou <br><span class="name">Guilherme Taveira Berson</span></h1>
-          <h2>Engenheiro Mobile | Android & iOS</h2>
-          <p class="typing">Apaixonado por <span>tecnologia</span>, <span>inovação</span> e <span>experiências mobile</span> que transformam ideias em realidade.</p>
+          <div class="greeting">
+            <span class="wave">👋</span>
+            <span>Olá, eu sou</span>
+          </div>
+          <h1 class="hero-title">Guilherme Taveira <span class="highlight">Berson</span></h1>
+          <h2 class="hero-subtitle">
+            <span class="role-icon"><i class="fas fa-mobile-alt"></i></span>
+            Engenheiro Mobile <span class="divider">|</span> Android & iOS
+          </h2>
+
+          <!-- Code Typing Effect -->
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="code-title">passion.kt</span>
+            </div>
+            <div class="code-content">
+              <span class="line-number">1</span>
+              <span class="code-text">
+                <span class="keyword">val</span> passion = <span class="string">"</span><span class="typing-text"
+                  id="typewriter"></span><span class="string">"</span><span class="cursor">|</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
           <div class="hero-buttons">
-            <a href="pages/sobremim.html" class="btn primary">💡 Saiba mais</a>
-            <a href="pages/artigos.html" class="btn secondary">📰 Meus artigos</a>
+            <a href="pages/sobremim.html" class="btn-primary">
+              <i class="fas fa-user"></i>
+              <span>Saiba mais</span>
+            </a>
+            <a href="pages/artigos.html" class="btn-secondary">
+              <i class="fas fa-newspaper"></i>
+              <span>Meus artigos</span>
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="hero-social">
+            <a href="https://github.com/bersoncrios" target="_blank" class="social-icon" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/guilhermeberson/" target="_blank" class="social-icon"
+              aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:guilhermeberson001@gmail.com" class="social-icon" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
           </div>
         </div>
-        <div class="hero-image">
-          <img src="imgs/foto-perfil.png" alt="Foto de Guilherme Berson">
+
+        <!-- Right Content - Profile Image -->
+        <div class="hero-image-container">
+          <div class="image-glow"></div>
+          <div class="image-ring"></div>
+          <img src="imgs/foto-perfil.png" alt="Foto de Guilherme Berson" class="hero-image">
+          <div class="floating-badge tech">
+            <i class="fab fa-android"></i>
+          </div>
+          <div class="floating-badge apple">
+            <i class="fab fa-apple"></i>
+          </div>
+          <div class="floating-badge code">
+            <i class="fas fa-code"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-arrow">
+          <i class="fas fa-chevron-down"></i>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Guilherme Berson. Todos os direitos reservados.</p>
+  </footer>
+
   <script src="scripts/script.js"></script>
+  <script>
+    // Typewriter Effect
+    const phrases = [
+      "tecnologia",
+      "inovação",
+      "experiências mobile",
+      "código limpo",
+      "apps que transformam ideias em realidade"
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typewriterElement = document.getElementById('typewriter');
+
+    function typeWriter() {
+      const currentPhrase = phrases[phraseIndex];
+
+      if (isDeleting) {
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let typeSpeed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        typeSpeed = 2000; // Pause at end
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        typeSpeed = 500; // Pause before new word
+      }
+
+      setTimeout(typeWriter, typeSpeed);
+    }
+
+    // Start typewriter effect
+    document.addEventListener('DOMContentLoaded', typeWriter);
+
+    // Wave animation reset
+    const wave = document.querySelector('.wave');
+    if (wave) {
+      setInterval(() => {
+        wave.style.animation = 'none';
+        setTimeout(() => {
+          wave.style.animation = 'wave 2.5s ease-in-out infinite';
+        }, 10);
+      }, 5000);
+    }
+  </script>
 </body>
+
 </html>
